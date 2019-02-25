@@ -7,13 +7,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 import fastClick from 'fastclick'
 import 'styles/reset.css'
 import 'styles/border.css'
 import 'styles/iconfont.css'
+import 'swiper/dist/css/swiper.css'
 
 Vue.config.productionTip = false;
-/*导入fastclick插件后，使用该插件的attach添加到body层即可*/
+Vue.use(VueAwesomeSwiper);
+/*导入fastClick插件后，使用该插件的attach添加到body层即可*/
 fastClick.attach(document.body);
 
 new Vue({
