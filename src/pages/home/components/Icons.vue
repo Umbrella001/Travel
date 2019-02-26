@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page,index) of pages" :key="index">
     <div class="icon-box" v-for="item of page" :key="item.id">
       <div class="icon-img">
@@ -17,53 +17,16 @@
 <script>
     export default {
         name: "HomeIcons",
+      props:{
+        iconList : Array
+      },
       data : function () {
           return {
-            iconList:[
-              {
-                id:'01',
-                iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                iconName:'热门景点'
-            },{
-                id:'02',
-                iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png',
-                iconName:'自然风光'
-
-            },{
-                id:'03',
-                iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png',
-                iconName:'游乐场'
-            },{
-                id:'04',
-                iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
-                iconName:'海洋馆'
-            },{
-                id:'05',
-                iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/ab/6f7d6e44963c9302.png',
-                iconName:'泡温泉'
-            }, {
-                id:'06',
-                iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/b2/bfbc5d66e0ab5a02.png',
-                iconName:'冰雪季'
-              },{
-                id:'07',
-                iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
-                iconName:'动植物园'
-
-              },{
-                id:'08',
-                iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png',
-                iconName:'玩转长隆'
-              },{
-                id:'09',
-                iconUrl:'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-                iconName:'一日游'
-              },{
-                id: '10',
-                iconUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20192/b34a13fd372f5ce8cb2c954ffe25622d.png',
-                iconName: '周边游'
-              }
-            ]
+            swiperOption:{
+              autoplayDisbleOnInteraction:false,//和loop结合实现无缝轮播
+              loop:false,//轮播图滑动循环开关loop
+              // autoplay:false 或者直接使用autoplay
+            },
           }
       },
       /*使用computed函数计算多数组的页数*/

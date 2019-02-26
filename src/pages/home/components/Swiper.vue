@@ -1,10 +1,13 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
-      <swiper-slide v-for="item of swiperList" :key="item.id">
+    <swiper :options="swiperOption" v-if="showJudge">
+      <swiper-slide
+        v-for="item of swiperList" :key="item.id">
         <img class="swiper-image" :src="item.imgUrl" :alt="item.alt">
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
+      <!--<div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>-->
+      <!--<div class="swiper-button-next swiper-button-white" slot="button-next"></div>-->
     </swiper>
   </div>
 </template>
@@ -12,34 +15,32 @@
 <script>
     export default {
       name: "HomeSwiper",
+      props:{
+        swiperList : Array
+      },
       data(){
         return{
           swiperOption : {
-            pagination:'.swiper-pagination',
-            /*轮播图滑动循环开关loop*/
-            loop:true
+            notNextTick:true,//第一时间获取swiper对象
+            autoplay:2500,//轮播时间ms
+            autoplayDisbleOnInteraction:true,//和loop结合实现无缝轮播
+            loop:true,//轮播图滑动循环开关loop
+            direction: 'horizontal',//垂直轮播为vertical
+            paginationType:'bullets',//分页类型：bullets圆点、fraction分页、progress进度条、custom自定义
+            paginationClickable:true,//点击分页器按钮时会自动跳转
+            observer:true,//修改swiper自己或子元素时，自动初始化swiper
+            observeParents:true,//修改swiper的父元素时，自动初始化swiper
+            pagination:'.swiper-pagination',//分页区域加载，只有导入才能对其加载样式
+            prevButton:'.swiper-button-prev',//分页按钮(点亮)
+            nextButton:'.swiper-button-next'//分页按钮(未点亮)
           },
-          swiperList:[
-            {
-              id : '001',
-              imgUrl: 'http://img1.qunarzz.com/piao/fusion/1511/74/09399809dee2c9f7.jpg_890x330_7c21d294.jpg',
-              alt : '连州地下河'
-          },{
-              id : '002',
-              imgUrl: 'http://img1.qunarzz.com/piao/fusion/1711/fb/de32080b7db0fe02.jpg_890x330_0c79691b.jpg',
-              alt : '七星岩'
-            },{
-              id : '003',
-              imgUrl: 'http://img1.qunarzz.com/piao/fusion/1609/1c/3e5cd4c5f2ad2002.jpg_890x330_e0568d4d.jpg',
-              alt : '湟川三峡'
-            },{
-              id : '004',
-              imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20192/25d66465f9f0f27f99b3fe43307c7a79.jpg_890x330_39629863.jpg',
-              alt : '深圳欢乐谷'
-            }
-          ]
         }
       },
+      computed :{
+        showJudge(){
+          return this.swiperList.length
+        }
+      }
     }
 </script>
 
@@ -53,6 +54,9 @@
    * 解决：在组件的最外层class进行">>>"穿透到其他组件指定元素即可
    * 疑点：如控制轮播图下面的滑动点并没有显示在该组件外层，如何获取？
    * 解决：在浏览器使用检查代码中的选择器，对页面上对应区域点击，即可获取该区域的Elements信息
+   * 问题3：使用ajax对Home父子组件传值时,出现加载页面时轮播图为最后一张首先显示
+   * 原因：ajax传值时第一次是空数组，由于swiper是动态的随着数据的引入而创建,所以第一次传递数组时便是空数组,导致真正数据即第一章轮播图会出现在第二次创建的swiper
+   * 解决：根据原因，我们可以在swiper中做一个判断v-if，如果进入的数据为空时并不生成一次循环,空数组length为0，v-if为false
    */
 .wrapper >>>  .swiper-pagination-bullet-active
   background : #62dd21

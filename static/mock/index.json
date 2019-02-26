@@ -1,0 +1,121 @@
+{
+  "ret": true,
+  "data": {
+    "city": "广州",
+    "swiperList": [{
+        "id": "001",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1511/74/09399809dee2c9f7.jpg_890x330_7c21d294.jpg",
+        "alt" : "连州地下河"
+      },{
+        "id": "002",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1711/fb/de32080b7db0fe02.jpg_890x330_0c79691b.jpg",
+        "alt" : "七星岩"
+    },{
+        "id": "003",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1609/1c/3e5cd4c5f2ad2002.jpg_890x330_e0568d4d.jpg",
+        "alt" : "湟川三峡"
+    },{
+        "id": "004",
+        "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20192/25d66465f9f0f27f99b3fe43307c7a79.jpg_890x330_39629863.jpg",
+        "alt" : "深圳欢乐谷"
+    }],
+    "iconList": [{
+        "id": "01",
+        "iconUrl": "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
+        "iconName": "景点门票"
+      }, {
+        "id": "02",
+        "iconUrl": "http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png",
+        "iconName": "自然风光"
+      }, {
+        "id": "03",
+        "iconUrl": "http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png",
+        "iconName": "游乐场"
+      }, {
+        "id": "04",
+        "iconUrl": "http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png",
+        "iconName": "海洋馆"
+      }, {
+        "id": "05",
+        "iconUrl": "http://img1.qunarzz.com/piao/fusion/1803/ab/6f7d6e44963c9302.png",
+        "iconName": "泡温泉"
+      }, {
+        "id": "06",
+        "iconUrl": "http://img1.qunarzz.com/piao/fusion/1803/b2/bfbc5d66e0ab5a02.png",
+        "iconName": "冰雪季"
+      }, {
+        "id": "07",
+        "iconUrl": "http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png",
+        "iconName": "动植物园"
+      }, {
+        "id": "08",
+        "iconUrl": "http://img1.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png",
+        "iconName": "玩转长隆"
+      }, {
+        "id": "09",
+        "iconUrl": "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png",
+        "iconName": "一日游"
+      }, {
+        "id": "10",
+        "iconUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20192/b34a13fd372f5ce8cb2c954ffe25622d.png",
+        "iconName": "周边游"
+    }],
+    "recommendList": [{
+        "id": "001",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/201403/07/30b534b0de51ccac2906bcb6ba159988.jpg_250x250_86778c54.jpg",
+        "title": "长隆野生动物园",
+        "desc": "隶属全国首批国家级5A旅游景区长隆旅游度假区",
+        "money": 258
+      }, {
+        "id": "002",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/201405/27/ef08b0cb4a5afb2f570e5c4dff5f743e.jpg_250x250_2e9029da.jpg",
+        "title": "长隆国际大马戏剧院",
+        "desc": "拥有全球首创实景式马戏舞台，数千万巨资打造极致奢华的尖端舞美科技",
+        "money": 229
+      }, {
+        "id": "003",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1707/88/889ae02b07140066a3.img.jpg_200x200_d3b1427c.jpg",
+        "title": "长隆欢乐世界",
+        "desc": "\"全球过山车之王\"垂直过山车等你来玩",
+        "money": 178.9
+    }, {
+        "id": "004",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1410/20/41d723daadc98045fe6b7283ba0af40c.jpg_200x200_5a05d5bc.jpg",
+        "title": "碧水湾温泉度假村",
+        "desc": "养生度假等功能于一体的综合性五星标准温泉度假村",
+        "money": 95
+    }, {
+        "id": "005",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/201403/07/1faf03354267996c8b039aa15290377b.jpg_200x200_7d3389d4.jpg",
+        "title": "天适樱花悠乐园",
+        "desc": "体验漂游岛屿的慢生活和悠生活，感受自然万物的空灵之美",
+        "money": 48
+    }],
+    "weekendList": [{
+        "id": "001",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1811/15/66f14e0fd6fbb.jpg_r_640x214_5d69f21d.jpg",
+        "title": "清远周边逛",
+        "desc": "人人都有一双发现美的眼睛，身边的事物最熟悉不过，那你可曾发现了被人遗漏的美？"
+      }, {
+        "id": "002",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1811/b8/5d599bbdcf8b57.jpg_r_640x214_2ee055e3.jpg",
+        "title": "浮在海上的绿洲",
+        "desc": "南国滨海之城，避寒胜地，有暖暖的阳光，海风习习，吃着海鲜逛逛老街多惬意啊"
+      }, {
+        "id": "003",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1602/9c/39c5ce9ff58609.jpg_r_640x214_efb90102.jpg",
+        "title": "粤西温泉",
+        "desc": "自驾粤西，这里有最全最心仪的温泉池，环境优美，舒舒服服的泡个热汤，远离繁忙的工作"
+      }, {
+        "id": "004",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1505/92/580e9ea4f37a1b.jpg_r_640x214_72112761.jpg",
+        "title": "广州必打卡",
+        "desc": "感受现代与传统相融合的广州"
+      }, {
+        "id": "005",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1505/b9/f9d8ace21c06.jpg_r_640x214_1f239a81.jpg",
+        "title": "粤东泡汤好去处",
+        "desc": "全时四季的温泉，度假的天堂，这里独特的矿物质温泉是您养生、养颜疗神的宝地"
+      }]
+  }
+}
