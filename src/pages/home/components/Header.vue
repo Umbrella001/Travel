@@ -6,9 +6,11 @@
     <div class="header-input">
       <span class="iconfont">&#xe60b;</span>
       输入城市/景点/游玩主题</div>
+    <router-link to="/city">
     <div class="header-right">{{this.city}}
     <span class="iconfont drop-down">&#xe64a;</span>
     </div>
+    </router-link>
   </div>
 </template>
 
@@ -39,18 +41,19 @@
     display: flex
     color:#fff
     background : $bgColor
-    line-height: .86rem
+    line-height: $headerHeight
   .header-left
     float: left
     width: .64rem
   .return
+    width : .64rem
     font-size :.4rem
-    margin-left :.04rem
-    text-align center
+    margin-left :.16rem
   .header-right
     float:right
     width: 1.24 rem
     text-align:center
+    color :#fff
    .drop-down
      font-size : .12rem
      margin-right .04rem
