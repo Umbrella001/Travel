@@ -1,7 +1,7 @@
 <template>
   <div class="icons">
-    <swiper :options="swiperOption">
-      <swiper-slide v-for="(page,index) of pages" key="index">
+    <swiper>
+      <swiper-slide v-for="(page,index) of pages" :key="index">
     <div class="icon-box" v-for="item of page" :key="item.id">
       <div class="icon-img">
         <img class="icon-position" :src="item.iconUrl" :alt="item.iconUrl">
@@ -19,11 +19,6 @@
         name: "HomeIcons",
       data : function () {
           return {
-            swiperOption : {
-              pagination:'.swiper-pagination',
-              /*轮播图滑动循环开关loop*/
-              loop:false
-            },
             iconList:[
               {
                 id:'01',
@@ -96,8 +91,6 @@
    * 解决：第一在icons循环体中外包"swiper :op..."和"swiper-slide"如果需要轮播点则再加上wiper-pagination，并且在data中定义pagination；第二使用computed计算循环体中数组的数量进行页数的计算；第三在swiper-slide循环页数，循环体中更改之前的参数，统一改成page
    * 优化：使用封装CSS中特殊样式为全局styl函数，提高代码复用性和维护性
    */
-.icons >>> .swiper-pagination
-  display :none
 .icons >>> .swiper-container
   height :0
   padding-bottom : 50%
