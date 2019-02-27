@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="title">
-      <img class="title-travel" src="../../../assets/styles/image/travel.png" alt=""><span class="title-text">周末去哪玩</span>
+      <img class="title-travel" src="~styles/image/travel.png" alt=""><span class="title-text">周末去哪玩</span>
     </div>
     <ul>
       <li class="place border-bottom"
