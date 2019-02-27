@@ -2,8 +2,15 @@
   <div>
     <city-header></city-header>
     <city-search></city-search>
-    <city-list :cities="cities" :hotCities="hotCities"></city-list>
-    <city-alphabet :cities="cities"></city-alphabet>
+    <city-list
+      :cities="cities"
+      :hotCities="hotCities"
+      :letter="letter"
+    ></city-list>
+    <city-alphabet
+      :cities="cities"
+      @change="keyChange"
+    ></city-alphabet>
   </div>
 </template>
 
@@ -24,7 +31,8 @@
       data (){
         return{
           cities:{},
-          hotCities:[]
+          hotCities:[],
+          letter:''
         }
       },
       mounted() {
@@ -42,8 +50,12 @@
             this.cities = data.cities;
             this.hotCities = data.hotCities;
           }
+        },
+        keyChange (letter){
+          this.letter = letter
         }
-      }
+      },
+
     }
 </script>
 
