@@ -36,7 +36,7 @@
         }
       },
       mounted() {
-          this.getCityInfo()
+          this.getCityInfo(['city'])
       },
       methods: {
         getCityInfo : function () {
