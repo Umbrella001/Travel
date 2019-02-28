@@ -5,14 +5,18 @@
     <div class="title border-topbottom">当前城市</div>
     <div class="button-list">
     <div class="button-box">
-      <div class="button-text">广州</div>
+      <div class="button-text current">{{this.city}}</div>
     </div>
     </div>
   </div>
   <div class="area">
     <div class="title border-topbottom">热门城市</div>
     <div class="button-list">
-      <div class="button-box" v-for="item of hotCities" :key="item.id">
+      <div class="button-box"
+           v-for="item of hotCities"
+           :key="item.id"
+           @click="handleCityClick(item.name)"
+      >
       <div class="button-text">{{item.name}}</div>
       </div>
     </div>
@@ -26,7 +30,12 @@
       {{key}}
     </div>
     <div class="item-list">
-      <div class="item" v-for="innerItem of item" :key="innerItem.id">{{innerItem.name}}</div>
+      <div class="item"
+           v-for="innerItem of item"
+           :key="innerItem.id"
+           @click="handleCityClick(innerItem.name)"
+      >
+        {{innerItem.name}}</div>
     </div>
   </div>
   </div>
@@ -34,13 +43,26 @@
 </template>
 
 <script>
+  /*
+   * 知识点：对于页面跳转v-router提供了两个方法，第一个是在HTML上使用"<router.-link to="跳转的页面">"，第二种是在JS模块中定义router.push("跳转的页面")，前者是声明式，后者是编程式导航
+   * 位置：这些导航一般定义在router文件夹下的index.js中,此地方为路由的入口
+   */
   import Bscroll from 'better-scroll'
+  import { mapState , mapActions} from 'vuex'
     export default {
         name: "CityList",
       props:{
         cities : Object,
         hotCities : Array,
         letter : String
+      },
+      //组件调用Vuex中actions方法时使用dispatch
+      methods:{
+        handleCityClick(city){
+          this.selectCity(city);
+          this.$router.push('/')
+        },
+        ...mapActions(['selectCity'])
       },
       mounted() {
           this.scroll = new Bscroll(this.$refs.wrapper)
@@ -52,6 +74,9 @@
                this.scroll.scrollToElement(element)
              }
           }
+      },
+      computed : {
+        ...mapState(['city'])
       }
     }
 </script>
@@ -90,6 +115,12 @@
 .button-box
   float :left
   width :33.33%
+.button-text:active
+  color white
+  background : $bgColor
+.current
+  color $textColor
+  background : rgba(51, 244, 255, 0.37)
 .button-text
   margin : 4px
   padding : 4px 0
@@ -101,4 +132,7 @@
   line-height :36px
   padding-left :12px
   border-bottom : 1px solid #eee
+.item:active
+    color white
+    background : $bgColor
 </style>

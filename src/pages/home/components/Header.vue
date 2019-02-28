@@ -15,10 +15,12 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex'
   export default  {
     name: "Header",
-    props:{
-      city : String
+    //mapState使用vuex中的states数据映射到该computed计算属性中由city代替$store.state
+    computed : {
+      ...mapState(['city'])
     }
   }
 </script>
@@ -43,22 +45,23 @@
     background : $bgColor
     line-height: $headerHeight
   .header-left
-    float: left
     width: .64rem
   .return
     width : .64rem
     font-size :.4rem
     margin-left :.16rem
   .header-right
-    float:right
-    width: 1.24 rem
+    //定义宽度随时改变的块,使用最小宽度定义为可伸缩的模块
+    min-width: 1.04 rem
+    padding : 0 5px
     text-align:center
     color :#fff
    .drop-down
      font-size : .12rem
      margin-right .04rem
   .header-input
-    flex:1
+    flex :1
+    flex-basis:auto
     color #ccc
     background : #fff
     height: .64rem
