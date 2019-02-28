@@ -5,9 +5,13 @@
         <a class="title-right" href="http://touch.piao.qunar.com/touch/weekHotSales.htm?cityName=广州">全部榜单 <img class="title-arrow" src="../../../assets/styles/image/arrow-right.png" alt=""></a>
       </div>
         <ul>
-          <li class="place border-bottom"
+          <router-link
+              tag="li"
+              class="place border-bottom"
               v-for="item of recommendList"
-              :key="item.id">
+              :key="item.id"
+              :to=" '/detail/' + item.title"
+          >
             <img class="place-img" :src="item.imgUrl" :alt="item.title">
             <div class="place-info">
               <p class="place-title">{{item.title}}</p>
@@ -17,7 +21,7 @@
               <p class="place-qi">起</p>
               <button class="place-details">查看详情</button>
             </div>
-          </li>
+          </router-link>
         </ul>
       </div>
 
