@@ -1,43 +1,51 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img"
-           src="http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_350x240_f8a69516.jpg" alt="">
-      <div class="banner-info" >
-        <div class="banner-title">长隆野生动物世界(AAAAA景区)</div>
-        <div class="banner-number"><span class="iconfont banner-icon">&#xe6df;</span>29</div>
+      <img class="banner-img" :src="bannerImg" />
+      <div class="banner-info">
+        <div class="banner-title">
+          {{this.sightName}}
+        </div>
+        <div class="banner-number">
+          <span class="iconfont banner-icon">&#xe6df;</span>
+          {{this.bannerImgs.length}}
+        </div>
       </div>
     </div>
-    <common-gallery
-      :images="images"
-      v-show="showGallery"
-      @close="closeGallery"
-    ></common-gallery>
+      <common-gallery
+        :images="bannerImgs"
+        v-show="showGallery"
+        @close="handleGalleryClose"
+      ></common-gallery>
   </div>
 </template>
 
 <script>
   import CommonGallery from 'common/gallery/Gallery'
-    export default {
-        name: "DetailBanner",
-     data(){
-          return{
-            images:['http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_r_800x800_ea3a0585.jpg','http://img1.qunarzz.com/sight/p0/1605/47/47e676ee434a591490.img.jpg_r_800x800_fb15bd87.jpg'],
-            showGallery:false
-          }
-     },
-      methods:{
-        handleBannerClick(){
-          this.showGallery = true
-        },
-        closeGallery(){
-          this.showGallery = false
-        }
-      },
-      components:{
-        CommonGallery
+  export default {
+    name: 'DetailBanner',
+    props: {
+      sightName: String,
+      bannerImg: String,
+      bannerImgs: Array
+    },
+    data () {
+      return {
+        showGallery: false
       }
+    },
+    methods: {
+      handleBannerClick () {
+        this.showGallery = true
+      },
+      handleGalleryClose () {
+        this.showGallery = false
+      }
+    },
+    components: {
+      CommonGallery
     }
+  }
 </script>
 
 <style lang="stylus" scoped>

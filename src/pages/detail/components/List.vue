@@ -1,34 +1,28 @@
 <template>
-    <div>
-      <div class="title-column"
-           v-for="(item,index) of list"
-           :key="index"
-      >
-        <div class="item-title">
-          <span class="title-icon"></span>
-          {{item.title}}
-          <div class="title-info">
-            <div class="title-left">
-              <p class="title-left-text"></p>
-              <p class="title-left-desc"></p>
-            </div>
-            <div class="title-right"></div>
-          </div>
-        </div>
-      <div class="item-children" v-if="item.children">
+  <div>
+    <div
+      class="title-column"
+      v-for="(item, index) of list"
+      :key="index"
+    >
+      <div class="item-title">
+        <span class="title-icon"></span>
+        {{item.title}}
+      </div>
+      <div v-if="item.children" class="item-children">
         <detail-list :list="item.children"></detail-list>
       </div>
-        </div>
     </div>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "DetailList",
-      props:{
-          list : Array
-      }
+  export default {
+    name: 'DetailList',
+    props: {
+      list: Array
     }
+  }
 </script>
 
 <style lang="stylus" scoped>

@@ -18,12 +18,14 @@ export default new Router({
       name: 'City',
       component: City
     },{
-      path: '/detail/:name',
+      path: '/detail/:id',
       name: 'Detail',
       component: Detail
-    }
-
-  ]
+    }],
+  //解决页面切换时不会自动回到顶部的重要滚动行为（路由切换时，所以写在router逻辑中）
+  scrollBehavior (to,from,savePosition) {
+    return {x: 0,y:0}
+  }
 })
 
 

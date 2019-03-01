@@ -10,7 +10,7 @@
               class="place border-bottom"
               v-for="item of recommendList"
               :key="item.id"
-              :to=" '/detail/' + item.title"
+              :to=" '/detail/' + item.id"
           >
             <img class="place-img" :src="item.imgUrl" :alt="item.title">
             <div class="place-info">
