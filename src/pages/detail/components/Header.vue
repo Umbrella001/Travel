@@ -65,6 +65,7 @@
   margin-right 2px
 .header-column
 //冻结栏的制作position fixed
+  z-index 2
   position  fixed
   top 0
   left 0
