@@ -7,7 +7,7 @@ const path = require('path');
 module.exports = {
   dev: {
 
-    // Paths
+    // Paths 直接使用proxyTable前后端数据联调，不需要fiddler 和 charles
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     //webpack-dev-server提供的proxyTable可结合axios进行api的修改
