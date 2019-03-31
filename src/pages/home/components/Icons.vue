@@ -1,6 +1,8 @@
 <template>
   <div class="icons">
+    <!-- 轮播区 -->
     <swiper :options="swiperOption">
+      <!-- 图标区 -->
       <swiper-slide v-for="(page,index) of pages" :key="index">
     <div class="icon-box" v-for="item of page" :key="item.id">
       <div class="icon-img">
@@ -9,6 +11,7 @@
       <p class="icon-name">{{item.iconName}}</p>
     </div>
       </swiper-slide>
+      <!-- 轮播分页 -->
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
